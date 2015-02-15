@@ -3,7 +3,7 @@ Counts 0-99 automatically with adjustable speed using a potentiometer.
 
 # 
 
-Copyright (c) <2015> <Michael Parson>
+Copyright (c) 2015 Michael Parson
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License as
