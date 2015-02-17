@@ -9,7 +9,7 @@ int count = 0; // counter
 int speedPin = A5; // potentiometer 
 int speedValue = 0; // 
 ```
-void *setup*() {
+void **setup**() {
 ```c
 //The individual segments of a 2 digit seven-segment display.
 // 1 being the first digit 2 being the second digit
@@ -29,7 +29,7 @@ void *setup*() {
   pinMode(A1, OUTPUT);  //G2
 ```
 }
-void *loop*() {
+void **loop**() {
 ```c
 speedValue = analogRead(speedPin); 
   
