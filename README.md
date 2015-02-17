@@ -29,6 +29,164 @@ void *setup*() {
   pinMode(A1, OUTPUT);  //G2
 ```
 }
+void *loop*() {
+```c
+speedValue = analogRead(speedPin); 
+  
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 1);  
+ digitalWrite(4, 1);  
+ digitalWrite(5, 1);  //  Display 0 in ones place
+ digitalWrite(6, 1);
+ digitalWrite(7, 1);
+ digitalWrite(8, 0);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 0);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 1);
+ digitalWrite(5, 0);  //  Display 1 in ones place
+ digitalWrite(6, 0);
+ digitalWrite(7, 0);
+ digitalWrite(8, 0);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 0);
+ digitalWrite(5, 1);  //  Display 2 in ones place
+ digitalWrite(6, 1);
+ digitalWrite(7, 0);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 1);
+ digitalWrite(5, 1);  //  Display 3 in ones place
+ digitalWrite(6, 0);
+ digitalWrite(7, 0);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 0);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 1);
+ digitalWrite(5, 0);  //  Display 4 in ones place
+ digitalWrite(6, 0);
+ digitalWrite(7, 1);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 0);
+ digitalWrite(4, 1);
+ digitalWrite(5, 1);  //  Display 5 in ones place
+ digitalWrite(6, 0);
+ digitalWrite(7, 1);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 0);
+ digitalWrite(4, 1);
+ digitalWrite(5, 1);  //  Display 6 in ones place
+ digitalWrite(6, 1);
+ digitalWrite(7, 1);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 1);
+ digitalWrite(5, 0);  //  Display 7 in ones place
+ digitalWrite(6, 0);
+ digitalWrite(7, 0);
+ digitalWrite(8, 0);  //-------------
+ delay(speedValue);
+
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 1);
+ digitalWrite(5, 1);  //  Display 8 in ones place
+ digitalWrite(6, 1);
+ digitalWrite(7, 1);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+ 
+ digitalWrite(2, 1);  //-------------
+ digitalWrite(3, 1);
+ digitalWrite(4, 1);
+ digitalWrite(5, 0);  //  Display 9 in ones place
+ digitalWrite(6, 0);
+ digitalWrite(7, 1);
+ digitalWrite(8, 1);  //-------------
+ delay(speedValue);
+```
+This keep count of the tens place.
+```c
+ count++;
+ 
+ if (count == 1){      // When count is 1 it displays 1 in tens place
+   digitalWrite(9, 1);
+   digitalWrite(10, 1);
+ }
+ 
+ if (count == 2){      // When count is 2 it displays 2 in tens place
+   digitalWrite(10, 0);
+   digitalWrite(A0, 1);
+   digitalWrite(A1, 1);
+   digitalWrite(12, 1);
+   digitalWrite(11, 1);
+ }
+  if (count == 3){      // When count is 3 it displays 3 in tens place
+   digitalWrite(10, 1);
+   digitalWrite(12, 0);
+ }
+  if (count == 4){      // When count is 4 it displays 4 in tens place
+   digitalWrite(A0, 0);
+   digitalWrite(11, 0);
+   digitalWrite(13, 1);
+ }
+  if (count == 5){      // When count is 5 it displays 5 in tens place
+   digitalWrite(9, 0);
+   digitalWrite(A0, 1);
+   digitalWrite(11, 1);
+ }
+  if (count == 6){      // When count is 6 it displays 6 in tens place
+   digitalWrite(12, 1);
+ }
+  if (count == 7){      // When count is 7 it displays 7 in tens place
+   digitalWrite(10, 1);
+   digitalWrite(13, 0);
+   digitalWrite(9, 1);
+   digitalWrite(A1, 0);
+   digitalWrite(12, 0);
+   digitalWrite(11, 0);
+ }
+  if (count == 8){      // When count is 8 it displays 8 in tens place
+   digitalWrite(A1, 1);
+   digitalWrite(12, 1);
+   digitalWrite(11, 1);
+   digitalWrite(13, 1);
+   digitalWrite(11, 1);
+ }
+  if (count == 9){      // When count is 9 it displays 9 in tens place
+   digitalWrite(12, 0);
+   digitalWrite(11, 0);
+ }
+ if (count == 10){      // When count is 10. tens place becomes blank
+   digitalWrite(9, 0);
+   digitalWrite(10, 0);
+   digitalWrite(11, 0);
+   digitalWrite(12, 0);
+   digitalWrite(13, 0);
+   digitalWrite(A0, 0);
+   digitalWrite(A1, 0);
+   count = 0;            // Reset count back to 0
+   }
+```
+}
 
 
 
